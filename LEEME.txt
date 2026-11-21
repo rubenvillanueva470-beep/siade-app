@@ -1,0 +1,17 @@
+APP SIADE PROTOTIPO V4
+
+Cambios principales:
+- Se elimina el botón visible para abrir el formulario de contratación desde el ingreso.
+- El portal de trabajador incluye vistas demostrativas de: Mi contratación, Mis marcaciones, Solicitar marcación, Permisos y ausencias, Mis boletas y Observaciones.
+- Se muestran ejemplos de datos y estados para revisar la navegación.
+- El prototipo permite entrar libremente al portal de trabajador para revisar sus pantallas.
+
+IMPORTANTE: es una maqueta local. No autentica, no guarda ni envía solicitudes, documentos o datos; no está conectada a BioTime ni a la base de SIADE. En producción, si falta información obligatoria en la contratación, el trabajador verá un aviso y deberá completar los datos antes de acceder. No utilizar con datos reales.
+
+Para revisar, extraer el ZIP completo y abrir index.html.
+
+
+V7 - REGLA DE APROBACION DE MARCACIONES:
+- Tanto las marcaciones actuales (con fotografía tomada en el momento) como las marcaciones pasadas quedan pendientes de aprobación de cualquiera de los dos administradores.
+- Ninguna marcación se considera definitiva ni se incorpora como registro aprobado hasta que un administrador la apruebe.
+- Este prototipo es demostrativo; todavía no guarda solicitudes en el servidor real.

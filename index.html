@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172b3a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="SIADE"><link rel="apple-touch-icon" href="./icon-192.png"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+<title>SIADE · Comercializadora de Minerales</title>
+</head>
+<body>
+<header class="top"><div class="brand"><img src="logo-siade.png" alt="Logo oficial SIADE"></div><span class="tag">APP MÓVIL</span></header>
+<main><div class="demo-banner">MODO DEMOSTRACIÓN · ACCESO LIBRE PARA REVISAR TODOS LOS APARTADOS</div>
+<section id="home" class="screen active">
+ <div class="hero"><img class="hero-logo" src="logo-siade.png" alt="Logo oficial SIADE"><div class="eyebrow">COMERCIALIZADORA DE MINERALES SIADE LTDA.</div><h1>Bienvenido</h1><p>SIEMPRE ADELANTE</p></div>
+ <h2 class="choose">Selecciona tu acceso</h2>
+ <div class="choices">
+  <button class="choice" data-go="workerLogin"><span class="ico">♙</span><span><b>TRABAJADORES</b><small>Acceso personal de trabajadores</small></span><strong>›</strong></button>
+  <button class="choice" data-go="clientLogin"><span class="ico">▣</span><span><b>CLIENTES</b><small>Acceso a información comercial</small></span><strong>›</strong></button>
+  <button class="choice admin" data-go="adminLogin"><span class="ico">▤</span><span><b>SIADE ADMINISTRATIVO</b><small>Acceso privado para dos administradores</small></span><strong>›</strong></button>
+ </div><p class="foot">SIEMPRE ADELANTE</p>
+</section>
+<section id="workerLogin" class="screen">
+ <button class="back" data-go="home">← Volver</button><div class="pagehead"><span class="pill">PORTAL DE TRABAJADORES</span><h2>Ingreso de trabajadores</h2><p>Utiliza tu ID y contraseña asignados por Administración.</p></div>
+ <div class="field"><label>ID de trabajador</label><input id="workerId" placeholder="Ingresa tu ID"></div><div class="field"><label>Contraseña</label><input id="workerPass" type="password" placeholder="Ingresa tu contraseña"></div>
+ <button class="primary" data-go="workerDash">INGRESAR</button>
+ <p class="hint">En la aplicación real, si tu contratación está incompleta, aparecerá un aviso para completar tus datos antes de entrar. Este prototipo permite revisar las pantallas.</p>
+</section>
+<section id="workerProfile" class="screen">
+ <button class="back" data-go="workerLogin">← Volver</button><div class="pagehead"><span class="pill warning">COMPLETAR CONTRATACIÓN</span><h2>Completa tus datos</h2><p>Antes de ingresar al portal debes completar los datos obligatorios y adjuntar tu carnet por ambos lados.</p></div>
+ <div class="notice">Tu acceso al portal de trabajador se habilitará cuando todos los campos obligatorios y las dos imágenes del carnet estén completos y enviados.</div>
+ <form id="profileForm">
+  <div class="field"><label>Nombres completos *</label><input required placeholder="Como figura en tu carnet"></div>
+  <div class="field"><label>Primer apellido *</label><input required placeholder="Primer apellido"></div>
+  <div class="field"><label>Fecha de nacimiento *</label><input required type="date"></div>
+  <div class="field"><label>Número de carnet *</label><input required placeholder="Número de CI"></div>
+  <div class="field"><label>Fecha de contratación *</label><input required type="date"></div>
+  <div class="field"><label>Domicilio actual *</label><input required placeholder="Dirección o zona"></div>
+  <div class="field"><label>Teléfono celular *</label><input required type="tel" placeholder="Número de contacto"></div>
+  <div class="field"><label>Contacto de referencia *</label><input required placeholder="Nombre y teléfono"></div>
+  <div class="field"><label>Fotografía de carnet - anverso *</label><input required type="file" accept="image/*" capture="environment"></div>
+  <div class="field"><label>Fotografía de carnet - reverso *</label><input required type="file" accept="image/*" capture="environment"></div>
+  <div class="field"><label>Fotografía personal *</label><input required type="file" accept="image/*" capture="user"></div>
+  <label class="check"><input required type="checkbox"> Declaro que los datos proporcionados son correctos.</label>
+  <button class="primary" type="submit">ENVIAR DATOS PARA REVISIÓN</button>
+ </form><p class="hint">Los datos laborales como cargo, sueldo y horario serán revisados o completados por Administración. Esta maqueta no transmite ni almacena documentos.</p>
+</section>
+<section id="workerPending" class="screen"><div class="pagehead"><span class="pill warning">EN REVISIÓN</span><h2>Datos enviados</h2><p>Tu información queda pendiente de verificación por Administración. Una vez aprobada, podrás ingresar a tu portal.</p></div><button class="secondary" data-go="home">VOLVER AL INICIO</button></section>
+<section id="workerDash" class="screen">
+ <button class="back" data-go="home">← Salir</button>
+ <div class="pagehead"><span class="pill">PORTAL DE TRABAJADORES</span><h2>Mi espacio de trabajo</h2><p>Bienvenido. Aquí podrás consultar tu información y realizar solicitudes a Administración.</p></div>
+ <div class="profile-strip"><div class="avatar">TR</div><div><b>Trabajador de demostración</b><small>Perfil de ejemplo · Sin datos reales</small></div><span class="status-ok">ACTIVO</span></div>
+ <div class="tiles">
+  <button class="tilebtn" data-go="workerContract"><span>▤</span><b>Mi contratación</b><small>Datos personales, laborales y documentos</small></button>
+  <button class="tilebtn" data-go="workerMarks"><span>◷</span><b>Mis marcaciones</b><small>Entradas, salidas y horas registradas</small></button>
+  <button class="tilebtn" data-go="workerRequest"><span>＋</span><b>Solicitar marcación</b><small>Registrar una marca omitida o extraordinaria</small></button>
+  <button class="tilebtn" data-go="workerPermits"><span>☷</span><b>Permisos y ausencias</b><small>Solicitar permiso y adjuntar justificativo</small></button>
+  <button class="tilebtn" data-go="workerPayroll"><span>▧</span><b>Mis boletas</b><small>Ver pagos y descuentos</small></button>
+  <button class="tilebtn" data-go="workerObservations"><span>✉</span><b>Observaciones</b><small>Enviar consultas a Administración</small></button>
+ </div>
+</section>
+<section id="workerContract" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">MI CONTRATACIÓN</span><h2>Mis datos y contratación</h2><p>Consulta la información registrada en tu expediente laboral.</p></div>
+ <div class="data-card"><h3>Datos personales</h3><div class="data-grid"><div><small>Nombre completo</small><b>Trabajador de demostración</b></div><div><small>Carnet</small><b>••••••••</b></div><div><small>Fecha de nacimiento</small><b>Por completar</b></div><div><small>Domicilio</small><b>Por completar</b></div><div><small>Teléfono</small><b>Por completar</b></div><div><small>Contacto de referencia</small><b>Por completar</b></div></div></div>
+ <div class="data-card"><h3>Datos laborales</h3><div class="data-grid"><div><small>Cargo</small><b>Por asignar</b></div><div><small>Fecha de ingreso</small><b>Por completar</b></div><div><small>Sueldo básico</small><b>Reservado</b></div><div><small>Horario asignado</small><b>Por asignar</b></div><div><small>Tipo de contrato</small><b>Por registrar</b></div><div><small>Aportes a Gestora</small><b>Por confirmar</b></div></div></div>
+ <div class="data-card"><h3>Documentación</h3><div class="docrow">Carnet de identidad · Anverso <span class="status-pending">Pendiente</span></div><div class="docrow">Carnet de identidad · Reverso <span class="status-pending">Pendiente</span></div><div class="docrow">Fotografía personal <span class="status-pending">Pendiente</span></div><p class="hint">En la aplicación real podrás completar los campos pendientes y subir las fotografías desde tu teléfono.</p></div>
+</section>
+<section id="workerMarks" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">ASISTENCIA</span><h2>Mis marcaciones</h2><p>Revisa tus registros de entrada y salida.</p></div>
+ <div class="filters"><label>Desde <input type="date" value="2026-11-01"></label><label>Hasta <input type="date" value="2026-11-19"></label></div>
+ <div class="table-wrap"><table><thead><tr><th>Fecha</th><th>Día</th><th>Entrada</th><th>Salida</th><th>Estado</th></tr></thead><tbody><tr><td>18/11/2026</td><td>Miércoles</td><td>08:00</td><td>18:00</td><td><span class="status-ok">Completa</span></td></tr><tr><td>17/11/2026</td><td>Martes</td><td>08:12</td><td>18:03</td><td><span class="status-ok">Completa</span></td></tr><tr><td>16/11/2026</td><td>Lunes</td><td>—</td><td>18:01</td><td><span class="status-pending">Revisar</span></td></tr></tbody></table></div>
+ <p class="hint">Ejemplo visual. Las marcaciones reales se consultarán desde BioTime y los cálculos de SIADE.</p><button class="primary" data-go="workerRequest">SOLICITAR CORRECCIÓN DE MARCACIÓN</button>
+</section>
+<section id="workerRequest" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">ASISTENCIA</span><h2>Solicitar marcación</h2><p>Elige si necesitas registrar tu asistencia en este momento o solicitar una corrección de una fecha anterior.</p></div>
+ <div class="request-modes">
+  <button class="mode-card" type="button" data-go="currentMark"><span class="mode-icon">◉</span><b>REALIZAR MARCACIÓN ACTUAL</b><small>Registra tu asistencia ahora. La aplicación tomará una fotografía directamente con la cámara.</small><strong>CONTINUAR →</strong></button>
+  <button class="mode-card" type="button" data-go="pastMark"><span class="mode-icon">◷</span><b>MARCACIÓN PASADA</b><small>Solicita agregar o corregir una marcación de una fecha y hora anteriores.</small><strong>CONTINUAR →</strong></button>
+ </div><p class="hint">Tanto la marcación actual como la pasada quedarán pendientes de aprobación de cualquiera de los dos administradores. Ninguna se incorporará como marcación definitiva hasta ser aprobada.</p>
+</section>
+<section id="currentMark" class="screen">
+ <button class="back" data-go="workerRequest">← Volver</button><div class="pagehead"><span class="pill">MARCACIÓN ACTUAL</span><h2>Registrar asistencia ahora</h2><p>La fecha y hora se tomarán automáticamente al capturar la fotografía.</p></div>
+ <div class="notice">Para continuar debes tomar una fotografía en este momento. No se permite seleccionar una imagen de la galería. Esta marcación también quedará PENDIENTE DE APROBACIÓN y no será definitiva hasta que uno de los dos administradores la apruebe.</div>
+ <div class="field"><label>Tipo de marcación</label><select id="currentMarkType"><option>Entrada</option><option>Salida a almuerzo</option><option>Retorno de almuerzo</option><option>Salida</option><option>Marcación extraordinaria fuera de empresa</option></select></div>
+ <div class="camera-box"><video id="cameraVideo" autoplay playsinline muted></video><canvas id="cameraCanvas" hidden></canvas><img id="capturedPhoto" alt="Fotografía capturada" hidden><div id="cameraPlaceholder">La cámara se activará al pulsar «ABRIR CÁMARA».</div></div>
+ <div class="camera-actions"><button class="secondary" type="button" id="startCamera">ABRIR CÁMARA</button><button class="primary" type="button" id="takePhoto" disabled>TOMAR FOTOGRAFÍA</button></div>
+ <p id="cameraStatus" class="hint">Debes permitir el acceso a la cámara del dispositivo.</p><div id="currentCaptureInfo" class="notice" hidden></div>
+ <button class="primary" type="button" id="sendCurrentMark" disabled>ENVIAR MARCACIÓN ACTUAL</button><p class="hint">La fotografía y la hora de captura se enviarán a Administración. La marcación quedará pendiente de aprobación de cualquiera de los dos administradores antes de incorporarse como definitiva.</p>
+</section>
+<section id="pastMark" class="screen">
+ <button class="back" data-go="workerRequest">← Volver</button><div class="pagehead"><span class="pill">MARCACIÓN PASADA</span><h2>Solicitar marcación anterior</h2><p>Completa los datos de la fecha en que olvidaste marcar o realizaste una actividad fuera de la empresa.</p></div>
+ <div class="field"><label>Fecha de la marcación</label><input id="pastMarkDate" type="date"></div><div class="field"><label>Tipo de marcación</label><select id="pastMarkType"><option>Entrada</option><option>Salida a almuerzo</option><option>Retorno de almuerzo</option><option>Salida</option><option>Marcación extraordinaria fuera de empresa</option></select></div><div class="field"><label>Hora solicitada</label><input id="pastMarkTime" type="time"></div><div class="field"><label>Motivo y explicación</label><textarea id="pastMarkReason" rows="4" placeholder="Explica por qué no pudiste marcar o dónde realizaste el trabajo..."></textarea></div><div class="field"><label>Adjuntar respaldo (opcional)</label><input id="pastMarkFile" type="file" accept="image/*,.pdf"></div><button class="primary" type="button" id="sendPastMark">ENVIAR SOLICITUD</button><p class="hint">La solicitud quedará pendiente hasta que cualquiera de los dos administradores la apruebe o la deniegue.</p>
+</section>
+<section id="workerPermits" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">PERMISOS</span><h2>Permisos y ausencias</h2><p>Solicita autorización y consulta el estado de tus solicitudes.</p></div>
+ <div class="data-card"><h3>Nueva solicitud</h3><div class="field"><label>Tipo</label><select><option>Permiso con goce de haber</option><option>Permiso sin goce de haber</option><option>Ausencia justificada</option></select></div><div class="field"><label>Fecha desde</label><input type="date"></div><div class="field"><label>Fecha hasta</label><input type="date"></div><div class="field"><label>Motivo</label><textarea rows="3" placeholder="Describe el motivo de tu solicitud"></textarea></div><div class="field"><label>Documento de respaldo</label><input type="file" accept="image/*,.pdf"></div><button class="primary" type="button" onclick="alert('Demostración: solicitud preparada para revisión administrativa.')">ENVIAR PERMISO</button></div>
+ <div class="data-card"><h3>Mis solicitudes</h3><div class="docrow">Permiso personal · 12/11/2026 <span class="status-pending">Pendiente</span></div><div class="docrow">Justificación · 04/11/2026 <span class="status-ok">Aprobada</span></div></div>
+</section>
+<section id="workerPayroll" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">PAGOS</span><h2>Mis boletas</h2><p>Consulta tus boletas de pago y el detalle de tus haberes.</p></div>
+ <div class="data-card"><h3>Periodo: Octubre 2026</h3><div class="data-grid"><div><small>Sueldo básico</small><b>Bs —</b></div><div><small>Horas extras</small><b>Bs —</b></div><div><small>Descuento por faltas</small><b>Bs —</b></div><div><small>Otros descuentos</small><b>Bs —</b></div><div><small>Líquido pagable</small><b>Bs —</b></div></div><button class="secondary" type="button" onclick="alert('Demostración: la boleta PDF estará disponible al conectar la base de datos.')">VER / DESCARGAR BOLETA</button></div>
+ <p class="hint">Los importes reales solo serán visibles para el trabajador autenticado.</p>
+</section>
+<section id="workerObservations" class="screen">
+ <button class="back" data-go="workerDash">← Mi espacio</button><div class="pagehead"><span class="pill">COMUNICACIÓN</span><h2>Observaciones</h2><p>Envía una consulta, aviso o comentario a Administración.</p></div>
+ <div class="field"><label>Asunto</label><input placeholder="Asunto de tu observación"></div><div class="field"><label>Mensaje</label><textarea rows="5" placeholder="Escribe tu mensaje..."></textarea></div><div class="field"><label>Adjuntar archivo (opcional)</label><input type="file" accept="image/*,.pdf"></div><button class="primary" type="button" onclick="alert('Demostración: mensaje preparado. En la versión conectada llegará a Administración.')">ENVIAR OBSERVACIÓN</button>
+</section>
+<section id="clientLogin" class="screen">
+ <button class="back" data-go="home">← Volver</button><div class="pagehead"><span class="pill">PORTAL DE CLIENTES</span><h2>Ingreso de clientes</h2><p>Ingresa con tu primer nombre, primer apellido y número de carnet.</p></div>
+ <div class="field"><label>Primer nombre</label><input placeholder="Primer nombre"></div><div class="field"><label>Primer apellido</label><input placeholder="Primer apellido"></div><div class="field"><label>Contraseña inicial: número de carnet</label><input type="password" placeholder="Número de carnet"></div>
+ <button class="primary" data-go="clientDash">ENTRAR A CLIENTES (DEMO)</button><p class="hint">Modo demostración: puedes entrar sin nombre ni carnet. En la versión conectada se validará la cuenta real.</p>
+</section>
+<section id="clientFirstPass" class="screen"><button class="back" data-go="clientLogin">← Volver</button><div class="pagehead"><span class="pill warning">PRIMER INGRESO</span><h2>Crea tu contraseña</h2><p>Por seguridad, reemplaza tu carnet por una contraseña personal.</p></div><div class="field"><label>Nueva contraseña</label><input type="password" placeholder="Nueva contraseña"></div><div class="field"><label>Repetir contraseña</label><input type="password" placeholder="Repite la contraseña"></div><button class="primary" data-go="clientDash">GUARDAR Y CONTINUAR</button></section>
+<section id="clientDash" class="screen"><button class="back" data-go="home">← Salir</button><div class="pagehead"><span class="pill">CLIENTE</span><h2>Mi información comercial</h2><p>Consulta tus operaciones con SIADE.</p></div><div class="tiles"><article><span>▦</span><b>Mis lotes</b><small>Entregas y detalle</small></article><article><span>▤</span><b>Liquidaciones</b><small>Particulares y oficiales</small></article><article><span>↗</span><b>Anticipos y pagos</b><small>Movimientos registrados</small></article><article><span>Bs</span><b>Mis saldos</b><small>Estado de cuenta</small></article><article><span>◷</span><b>Historial</b><small>Historial comercial</small></article><article><span>✉</span><b>Consultas</b><small>Observaciones</small></article></div></section>
+<section id="adminLogin" class="screen"><button class="back" data-go="home">← Volver</button><div class="pagehead"><span class="pill red">ÁREA PRIVADA</span><h2>SIADE Administrativo</h2><p>Acceso exclusivo para los dos administradores autorizados.</p></div><div class="field"><label>Usuario administrativo</label><input placeholder="Usuario"></div><div class="field"><label>Contraseña</label><input type="password" placeholder="Contraseña"></div><button class="primary redbtn" data-go="adminDash">ENTRAR A ADMINISTRACIÓN (DEMO)</button><p class="hint">Modo demostración: acceso abierto solo en este prototipo local. La versión real tendrá únicamente dos cuentas administrativas.</p></section>
+<section id="adminDash" class="screen"><button class="back" data-go="home">← Salir</button><div class="pagehead"><span class="pill red">ADMINISTRACIÓN</span><h2>Panel administrativo</h2><p>Solicitudes y avisos internos.</p></div><div class="summary"><div><b>Solicitudes</b><strong>—</strong><small>Pendientes de revisión</small></div><div><b>Recordatorio</b><strong>3 días</strong><small>Antes del pago · solo administradores</small></div></div><h3>Solicitudes por revisar</h3><div class="request"><b>Solicitud de permiso</b><small>Trabajador · Pendiente de revisión</small><div class="actions"><button class="approve">Aprobar</button><button class="deny">Denegar</button></div></div><div class="request"><b>Corrección de marcación</b><small>Trabajador · Pendiente de revisión</small><div class="actions"><button class="approve">Aprobar</button><button class="deny">Denegar</button></div></div><div class="request"><b>Marcación extraordinaria</b><small>Trabajo fuera de la empresa</small><div class="actions"><button class="approve">Aprobar</button><button class="deny">Denegar</button></div></div>
+<div class="data-card admin-tools">
+ <h3>Documentos de trabajadores</h3>
+ <p class="hint">Genera documentos individuales para imprimir o guardar en PDF.</p>
+ <div class="field"><label>Seleccionar trabajador</label><select id="adminWorker"><option value="TR-0487">Rubén Mamani Quispe · TR-0487</option><option value="TR-0312">Carlos Flores Condori · TR-0312</option><option value="TR-0521">María Quispe López · TR-0521</option></select></div>
+ <div class="field"><label>Periodo de pago / reporte</label><input id="adminPeriod" type="month" value="2026-11"></div>
+ <div class="admin-doc-actions"><button class="primary" type="button" id="makePayslip">GENERAR BOLETA DE PAGO</button><button class="secondary" type="button" id="makeAttendance">REPORTE DE MARCACIONES</button></div>
+</div>
+<section id="adminDocument" class="admin-document" hidden>
+ <div class="document-toolbar"><b id="documentHeading">Documento</b><div><button class="secondary" type="button" id="printDocument">IMPRIMIR / GUARDAR PDF</button><button class="back" type="button" id="closeDocument">← Volver al panel</button></div></div>
+ <article id="printArea" class="print-area">
+  <div class="print-brand"><img src="logo-siade.png" alt="Logo SIADE"><div><b>COMERCIALIZADORA DE MINERALES SIADE LTDA.</b><small>SIEMPRE ADELANTE</small></div></div>
+  <h2 id="printTitle">BOLETA DE PAGO</h2><div id="printMeta" class="print-meta"></div><div id="printContent"></div>
+  <div class="signature-row"><div>____________________________<small>FIRMA DEL TRABAJADOR</small></div><div>____________________________<small>ADMINISTRACIÓN SIADE</small></div></div>
+  <p class="print-foot">Documento generado desde el portal administrativo SIADE.</p>
+ </article>
+</section>
+</section>
+</main><script src="app.js"></script>
+<script>if("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) { window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(err=>console.warn("No se pudo registrar el modo instalable",err))); }</script>
+</body></html>

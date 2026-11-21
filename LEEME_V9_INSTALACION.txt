@@ -1,0 +1,30 @@
+APP SIADE V9 - PRUEBA INSTALABLE (PWA)
+
+Esta versión convierte el prototipo V8 en una aplicación web instalable (PWA) para Android y iPhone.
+
+IMPORTANTE: Sigue siendo una DEMOSTRACIÓN. No está conectada al servidor SIADE, BioTime ni a una base de datos compartida. Los datos de ejemplo no son datos reales. No utilizar para nómina ni asistencia oficial.
+
+REQUISITO PARA INSTALAR EN EL TELÉFONO
+La aplicación debe abrirse desde una dirección HTTPS pública/privada con certificado válido. La cámara del teléfono requiere HTTPS (o localhost). Abrir index.html directamente como archivo o usar una dirección http://192.168.x.x normalmente no habilita la cámara.
+
+PUBLICACIÓN DE PRUEBA
+1. Publica el contenido completo de esta carpeta en un hosting estático que proporcione HTTPS. No cambies ni elimines los archivos.
+2. Abre la dirección HTTPS desde Chrome en Android o Safari en iPhone.
+3. Android: menú de Chrome > Instalar aplicación (o Añadir a pantalla de inicio).
+4. iPhone: botón Compartir de Safari > Añadir a pantalla de inicio.
+5. Abre el icono SIADE desde la pantalla de inicio.
+6. Para probar la cámara, entra a Trabajadores > Solicitar marcación > Realizar marcación actual y concede permiso a la cámara.
+
+PRUEBA EN COMPUTADORA
+Puedes servir la carpeta desde localhost (por ejemplo, con un servidor local) y abrir http://localhost; el navegador permitirá la cámara en localhost. Para instalarla en el teléfono se necesita HTTPS.
+
+FUNCIONES DEL PROTOTIPO
+- Inicio con Trabajadores, Clientes y SIADE Administrativo.
+- Captura de foto de marcación actual mediante cámara; ambas modalidades quedan pendientes de aprobación en la demostración.
+- Vistas de boleta y reporte de marcaciones imprimibles con datos de ejemplo.
+
+LIMITACIONES
+- No hay inicio de sesión real ni control de identidad.
+- Las solicitudes y aprobaciones no se transmiten ni guardan en un servidor.
+- Los documentos usan datos ilustrativos.
+- No hay notificaciones reales ni sincronización entre teléfonos.
